@@ -16,7 +16,7 @@ case "$action" in
 
         nohup java -jar -Xms128m -Xmx128m -XX:MaxPermSize=64m \
             logstash-1.1.13-flatjar.jar agent \
-            -f nvs-agent.conf &
+            -f nvs-agent.conf >/dev/null 2>/dev/null &
         echo $! > PID
         ;;
     stop)
