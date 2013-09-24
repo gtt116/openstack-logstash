@@ -18,6 +18,9 @@ case "$action" in
             logstash-1.1.13-flatjar.jar agent \
             -f nvs-agent.conf >/dev/null 2>/dev/null &
         echo $! > PID
+
+        pid=`cat PID`
+        echo "Running. pid: $pid"
         ;;
     stop)
         pid=`cat PID`
